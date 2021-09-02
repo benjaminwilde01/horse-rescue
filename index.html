@@ -7,9 +7,9 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- MAPBOX -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a0ae820409.js" crossorigin="anonymous"></script>
     <title>Horse Rescue</title>
 </head>
 <body>
@@ -91,24 +91,42 @@
     </section>
 
     <!-- CONTACT -->
-    <div class="container">
+    <section class="container d-flex justify-content-center flex-wrap">
+        <div class="col-md lead text-center h-100 white-text">
+            <h3 class="my-4 pb-2">Contact information</h3>
+            <ul class=" list-unstyled ml-4">
+                <li>
+                    <p><i class="fas fa-map-marker-alt pr-2 mx-2"></i>Luling, TX</p>
+                </li>
+                <li>
+                    <p><i class="fa fa-phone mx-2" aria-hidden="true"></i>512-919-4489</p>
+                </li>
+                <li>
+                    <p><i class="fas fa-envelope pr-2 mx-2"></i>horserescue@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md py-4">
+            <div id="map">
 
-        <div class="lead text-center h-100 white-text">
-
-          <h3 class="my-4 pb-2">Contact information</h3>
-          <ul class=" list-unstyled ml-4">
-            <li>
-              <p><i class="fas fa-map-marker-alt pr-2 mx-2"></i>Luling, TX</p>
-            </li>
-            <li>
-              <p><i class="fa fa-phone mx-2" aria-hidden="true"></i>512-919-4489</p>
-            </li>
-            <li>
-              <p><i class="fas fa-envelope pr-2 mx-2"></i>horserescue@gmail.com</p>
-            </li>
-          </ul>
-
+            </div>
+        </div>
+    </section>       
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <!-- MAPBOX -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/a0ae820409.js" crossorigin="anonymous"></script>
+    <!-- CUSTOM -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuamFtaW53aWxkZSIsImEiOiJja3QzMTliNncwMzN3MnpvMnowemU0Mzl4In0.tAhd5nl_-0x6DDVgqxVH9w';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-97.647327, 29.680314],
+            zoom: 10
+        });
+    </script>
 </body>
 </html>
